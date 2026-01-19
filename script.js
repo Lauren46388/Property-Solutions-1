@@ -25,35 +25,8 @@ if (ctaButton && ctaButton.textContent.includes('Quote')) {
     });
 }
 
-// Contact Form Handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Get form values
-        const formData = {
-            name: contactForm.children[0].value,
-            email: contactForm.children[1].value,
-            phone: contactForm.children[2].value,
-            projectType: contactForm.children[3].value,
-            message: contactForm.children[4].value
-        };
-
-        // Simple validation
-        if (!formData.name || !formData.email || !formData.message) {
-            alert('Please fill in all required fields.');
-            return;
-        }
-
-        // Simulate form submission
-        console.log('Form submitted:', formData);
-        alert('Thank you for your message! We will get back to you soon.');
-        
-        // Reset form
-        contactForm.reset();
-    });
-}
+// Contact Form Handling - Formspree will handle submission
+// The form submits directly to Formspree, no JavaScript interception needed
 
 // Scroll Animation for elements
 const observerOptions = {
